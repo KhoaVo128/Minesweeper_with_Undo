@@ -107,7 +107,7 @@ public class BoardPanel extends JPanel implements ICommon {
             lbSquare[i][j].setText("");
           } else {
             lbSquare[i][j].setForeground(Color.RED); // not revealed but right clicked
-            lbSquare[i][j].setText("\uD83D\uDEA9"); // ki tu 'flag'
+            lbSquare[i][j].setText("|>"); // ki tu 'flag'
           }
         } else { // if revealed
           if (listSquare[i][j].isHasMine()) { // is a mine
@@ -119,23 +119,20 @@ public class BoardPanel extends JPanel implements ICommon {
               lbSquare[i][j].setText("");
             } else {
               lbSquare[i][j].setText(numMineAround + "");
-              // đặt màu số cho dễ nhìn
               switch (numMineAround) {
               case 1:
-                //lbSquare[i][j].setForeground(new Color(128, 128, 128));
                 lbSquare[i][j].setForeground(Color.blue);
                 break;
               case 2:
-                lbSquare[i][j].setForeground(new Color(255, 0, 0));
+                lbSquare[i][j].setForeground(new Color(0, 204, 0));
                 break;
               case 3:
-                lbSquare[i][j].setForeground(new Color(0, 204, 0));
+                lbSquare[i][j].setForeground(new Color(255, 0, 0));
                 break;
               case 4:
                 lbSquare[i][j].setForeground(new Color(102, 0, 255));
                 break;
               case 5:
-                //lbSquare[i][j].setForeground(new Color(128, 128, 128));
                 lbSquare[i][j].setForeground(Color.blue);
                 break;
               case 6:
