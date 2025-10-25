@@ -42,7 +42,6 @@ public class BoardPanel extends JPanel implements ICommon {
       for (int j = 0; j < lbSquare[0].length; j++) {
         lbSquare[i][j] = new Label();
         lbSquare[i][j].setOpaque(true);
-        //lbSquare[i][j].setBackground(new Color(242, 242, 242));
         lbSquare[i][j].setBackground(Color.lightGray);
         lbSquare[i][j].setBorder(border);
         lbSquare[i][j].setHorizontalAlignment(JLabel.CENTER);
@@ -68,9 +67,9 @@ public class BoardPanel extends JPanel implements ICommon {
               if(!listener.getListSquare()[label.x][label.y].isOpen()){
                 listener.saveToStatusStack();
               }
-              listener.play(label.x, label.y); //
-
-
+              if(!listener.getListSquare()[label.x][label.y].isTarget()){
+                listener.play(label.x, label.y);
+              }
 
             } else if (e.getButton() == MouseEvent.BUTTON3) {
               listener.target(label.x, label.y); //put flag

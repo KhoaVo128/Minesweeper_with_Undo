@@ -6,7 +6,7 @@ import java.util.Stack;
 public class Board {
   public static final int NUM_ROWS = 15;
   public static final int NUM_COLUMNS = 20;
-  public static final int NUM_MINES = NUM_ROWS * NUM_COLUMNS / 8;
+  public static final int NUM_MINES = NUM_ROWS * NUM_COLUMNS / 10;
  
   public Square[][] square;
   public Stack<boolean[][]> undoList ;
@@ -71,8 +71,8 @@ public class Board {
       if (square[x][y].isHasMine()) {
         return false;
       }
-      if (square[x][y].getNumMineAround() == 0 ||(square[x][y].getNumMineAround() == 0 && square[x][y].isTarget())) { //if clicked on a square with surrounding mines =0
-        for (int m = -1; m <= 1; m++) {
+      if (square[x][y].getNumMineAround() == 0 /*|| (square[x][y].getNumMineAround() == 0 && !square[x][y].isTarget())*/) { //if clicked on a square with surrounding mines =0
+        for (int m = -1; m <= 1; m++){
           if (x + m < 0) { m++; }
           if (x + m > NUM_ROWS - 1) { break; }
           for (int n = -1; n <= 1; n++) { //expand area until surrounded with squares with surroundind mines!=0
@@ -89,8 +89,7 @@ public class Board {
   public void target(int x, int y) {
     if (!square[x][y].isOpen()) { //not open
       if (!square[x][y].isTarget()) { // and hasn't put flag
-        square[x][y].setTarget(true); //put flag
-          
+        square[x][y].setTarget(true); //put flag    
       } else {
         square[x][y].setTarget(false); //remove flag
           //remainingMines++;

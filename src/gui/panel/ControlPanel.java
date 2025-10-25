@@ -20,7 +20,6 @@ public class ControlPanel extends JPanel implements ICommon {
   private JLabel lbNotify;
   private JButton btnRestart;
   private JButton btnUndo;
-
   private ITrans listener;
 
 
@@ -45,7 +44,7 @@ public class ControlPanel extends JPanel implements ICommon {
 
     lbNumSquareClosed = new JLabel();
     lbNumSquareClosed.setFont(font);
-    lbNumSquareClosed.setText("Số ô chưa mở: " + Board.NUM_ROWS * Board.NUM_COLUMNS);
+    lbNumSquareClosed.setText("Unopened Tiles: " + Board.NUM_ROWS * Board.NUM_COLUMNS);
     lbNumSquareClosed.setBounds(10, 5, 250, 40);
     add(lbNumSquareClosed);
  
@@ -56,7 +55,7 @@ public class ControlPanel extends JPanel implements ICommon {
  
     btnRestart = new JButton();
     btnRestart.setFont(font);
-    btnRestart.setText("Chơi lại");
+    btnRestart.setText("Replay");
     btnRestart.setBounds(490, 10, 200, 40);
     add(btnRestart);
 
@@ -80,7 +79,7 @@ public class ControlPanel extends JPanel implements ICommon {
       @Override
       public void actionPerformed(ActionEvent e) {
         listener.restart();
-        lbNumSquareClosed.setText("Số ô chưa mở: " + Board.NUM_ROWS * Board.NUM_COLUMNS);
+        lbNumSquareClosed.setText("Unopened Tiles: " + Board.NUM_ROWS * Board.NUM_COLUMNS);
         lbNotify.setText("");
       }
     }
@@ -94,12 +93,12 @@ public class ControlPanel extends JPanel implements ICommon {
   }
  
   public void updateStatus(int numSquareClosed) { //fix this for timer
-    lbNumSquareClosed.setText("Số ô chưa mở: " + numSquareClosed);
+    lbNumSquareClosed.setText("Unopened Tiles: " + numSquareClosed);
     if (numSquareClosed == Board.NUM_MINES) {
-      lbNotify.setText("THẮNG");
+      lbNotify.setText("YOU WIN");
       lbNotify.setForeground(Color.blue);
     } else if (numSquareClosed == 0) {
-      lbNotify.setText("THUA");
+      lbNotify.setText("YOU LOSE");
       lbNotify.setForeground(Color.red);
     }else{
       lbNotify.setText("");
