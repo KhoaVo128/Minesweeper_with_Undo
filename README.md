@@ -1,3 +1,7 @@
+#HOW TO RUN THE GAME
+commands:
+  cd src -> make run
+
 # MINESWEEPER + BOARD UNDO MECHANIC
 Minesweeper
 +About Minesweeper:
