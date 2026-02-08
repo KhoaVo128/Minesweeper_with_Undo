@@ -1,10 +1,11 @@
-#HOW TO RUN THE GAME
-commands:
-  cd src -> make run
-
 # MINESWEEPER + BOARD UNDO MECHANIC
-Minesweeper
-+About Minesweeper:
+## HOW TO BUILD AND RUN THE GAME
+
+**Make sure you have java installed**
+--
+**commands: cd src/ ; make run**
+
+## About Minesweeper:
 The computer game Minesweeper is a game that was made popular by the Windows OS.  The computer game Minesweeper starts the game by showing you a blank grid of squares. Some squares conceal mines; the rest are safe. Your task is to work out where the mines are without detonating any of them. You do this by choosing a square. If thereʹs a mine underneath it, the mine is detonated and the game ends — ‐ with a loss for you, of course. If there is no mine, however, the computer writes a number in that square, telling you how many mines there are in the eight immediately adjacent squares (horizontally, vertically, and diagonally).   
 If your first guess hits a mine, youʹre unlucky: you get no information except that youʹve lost. If it doesnʹt, though, then you get partial information about the location of nearby mines. You use this information to influence your next choice of square, and again either you detonate a mine and lose, or you gain information about the positions of nearby mines. If you wish, you can choose to mark a square as containing a mine: if youʹre wrong, you lose. Proceeding in this way, you can win the game by locating and marking all the mines. 
 +Rules:
